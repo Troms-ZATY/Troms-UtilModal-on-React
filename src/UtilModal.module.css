@@ -1,0 +1,68 @@
+@property --util-modal-bg-color {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #F0F0F0;
+}
+
+.wrapper {
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.isOpen {
+  opacity: 1;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(0);
+  background-color: rgba(0, 0, 0, 0.5);
+
+  transition: backdrop-filter .3s .1s;
+}
+
+.isOpen .background {
+  backdrop-filter: blur(2px);
+}
+
+.header {
+  padding: 8px 8px;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  overflow: scroll;
+
+  min-width: 50vw;
+  max-width: 90vw;
+  min-height: 50vh;
+  background-color: var(--util-modal-bg-color);
+  border-radius: 4px;
+}
+
+.cancelButton {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  display: grid;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.cancelButtonIcon {
+  width: 32px;
+  aspect-ratio: 1;
+  fill: #000;
+}
+
+.main {
+  padding: 8px;
+}
